@@ -33,16 +33,17 @@ else
     {
         string sql = "insert into people (FirstName, LastName) values (@FirstName, @LastName);";
 
-        await _data.SaveData(sql, new { FirstName = "Billy", LastName = "Bob" }, _config.GetConnectionString("default"));
+        await _data.SaveData(sql, new { FirstName = "Göran", LastName = "Glansberg" }, _config.GetConnectionString("default"));
 
         await OnInitializedAsync();
     }
 
+    
     private async Task UpdateData()
     {
         string sql = "update people set FirstName = @FirstName where LastName = @LastName";
 
-        await _data.SaveData(sql, new { FirstName = "Timothy", LastName = "Corey" }, _config.GetConnectionString("default"));
+        await _data.SaveData(sql, new { FirstName = "Timothy", LastName = "Nordin" }, _config.GetConnectionString("default"));
 
         await OnInitializedAsync();
     }
@@ -51,7 +52,7 @@ else
     {
         string sql = "delete from people where LastName = @LastName";
 
-        await _data.SaveData(sql, new { LastName = "Bob" }, _config.GetConnectionString("default"));
+        await _data.SaveData(sql, new { LastName = "Glansberg" }, _config.GetConnectionString("default"));
 
         await OnInitializedAsync();
     }
